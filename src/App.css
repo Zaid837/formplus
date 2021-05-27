@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  padding: 5% 10%;
+  height: 100vh;
+}
+
+.badge-notification {
+  display: flex;
+  justify-content: center;
+  margin-top: 85px;
+  background-color: #fff4ea;
+  padding-top: 24px;
+  padding-bottom: 14px;
+  color: #252525;
+}
+.info-icon {
+  margin-right: 10px;
+}

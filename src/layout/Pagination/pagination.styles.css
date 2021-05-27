@@ -1,0 +1,26 @@
+.pagination {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin: 70px 0;
+  padding-bottom: 70px;
+}
+.page-con {
+  display: flex;
+  justify-content: space-between;
+}
+.page-btn {
+  font-size: 18px;
+  font-weight: 500;
+  color: #3f3f3f;
+  cursor: pointer;
+}
+.counter {
+  font-size: 18px;
+  font-weight: 500;
+}
+.count-number {
+  border: 1px solid #3f3f3f;
+  border-radius: 3px;
+  padding: 5px 10px;
+}

@@ -1,0 +1,11 @@
+.template-con {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.template-list {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
