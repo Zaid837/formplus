@@ -4,6 +4,7 @@ import SearchIcon from "../../assets/search.png";
 
 class Navbar extends Component {
   render() {
+    const { handleSelectedCategory } = this.props;
     return (
       <div className="navbar">
         <div className="search">
@@ -20,10 +21,11 @@ class Navbar extends Component {
           <div className="filter-types">
             <div className="category">
               <span className="dropdown-title">Category</span>
-              <select name="category" id="">
+              <select name="category" id="" onChange={handleSelectedCategory}>
                 <option value="All">All</option>
-                <option value="Education">Education</option>
                 <option value="Health">Health</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Education">Education</option>
               </select>
             </div>
             <div className="category">

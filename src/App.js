@@ -12,8 +12,10 @@ class App extends React.Component {
     super();
     this.state = {
       url: "https://front-end-task-dot-fpls-dev.uc.r.appspot.com/api/v1/public/task_templates",
-      templates: "",
+      templates: [],
       currentPage: 1,
+      pageSize: 15,
+      category: "All",
     };
   }
 
@@ -29,11 +31,19 @@ class App extends React.Component {
   handlePrevPage = () => {
     this.setState({ currentPage: this.state.currentPage - 1 });
   };
+
+  selectCategory = (e) => {
+    const { value } = e.target;
+    this.setState({ category: value });
+  };
   render() {
-    const { templates, currentPage } = this.state;
+    const { templates, currentPage, pageSize, category } = this.state;
     return (
       <div className="App">
-        <Navbar />
+        <Navbar
+          handleSelectedCategory={this.selectCategory}
+          category={category}
+        />
         <div className="badge-notification">
           <img src={Vector} alt="info" className="info-icon" />
           <p>
@@ -41,13 +51,20 @@ class App extends React.Component {
             looking for? Search from the 1000+ available templates
           </p>
         </div>
-        <TemplateList templates={templates} />
-        {templates && (
+
+        <TemplateList
+          templates={templates}
+          currentPage={currentPage}
+          pageSize={pageSize}
+          category={category}
+        />
+        {templates.length !== 0 && (
           <Pagination
             templates={templates}
             currentPage={currentPage}
             toggleNextPage={this.handleNextPage}
             togglePrevPage={this.handlePrevPage}
+            pageSize={pageSize}
           />
         )}
       </div>

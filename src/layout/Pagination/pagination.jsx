@@ -1,19 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./pagination.styles.css";
 class Pagination extends Component {
-  //   constructor() {
-  //     super();
-  //     this.state = {
-
-  //     };
-  //   }
-
   render() {
-    const { templates, toggleNextPage, togglePrevPage, currentPage } =
+    const { templates, toggleNextPage, togglePrevPage, currentPage, pageSize } =
       this.props;
     // console.log(templates.length);
 
-    const pagesCount = Math.ceil(templates.length / 15);
+    const pagesCount = Math.ceil(templates.length / pageSize);
     return (
       <div className="pagination">
         <div className="page-con">
@@ -37,5 +31,13 @@ class Pagination extends Component {
     );
   }
 }
+
+// checking prop types to make sure non usable props aren't passed
+Pagination.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  pageSize: PropTypes.number.isRequired,
+  toggleNextPage: PropTypes.func.isRequired,
+  togglePrevPage: PropTypes.func.isRequired,
+};
 
 export default Pagination;

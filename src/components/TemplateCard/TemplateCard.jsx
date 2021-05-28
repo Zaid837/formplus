@@ -3,7 +3,7 @@ import "./TemplateCard.styles.css";
 
 class TemplateCard extends Component {
   render() {
-    const { key, name, description } = this.props;
+    const { name, description } = this.props;
     return (
       <div className="template-card-con">
         <div className="card">
