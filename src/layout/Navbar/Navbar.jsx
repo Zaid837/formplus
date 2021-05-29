@@ -4,7 +4,13 @@ import SearchIcon from "../../assets/search.png";
 
 class Navbar extends Component {
   render() {
-    const { handleSelectedCategory } = this.props;
+    const {
+      handleSelectedCategory,
+      handleSelectOrderType,
+      sortType,
+      handleSelectDateType,
+      sortByDate,
+    } = this.props;
     return (
       <div className="navbar">
         <div className="search">
@@ -30,18 +36,28 @@ class Navbar extends Component {
             </div>
             <div className="category">
               <span className="dropdown-title">Order</span>
-              <select name="order" id="">
-                <option value="All">Default</option>
-                <option value="Education">Ascending</option>
-                <option value="Health">Descending</option>
+              <select
+                name="order"
+                id=""
+                onChange={handleSelectOrderType}
+                value={sortType}
+              >
+                <option value={sortType}>{sortType}</option>
+                <option value="Ascending">Ascending</option>
+                <option value="Descending">Descending</option>
               </select>
             </div>
             <div className="category">
               <span className="dropdown-title">Date</span>
-              <select name="date" id="">
-                <option value="All">Default</option>
-                <option value="Education">Ascending</option>
-                <option value="Health">Descending</option>
+              <select
+                name="date"
+                id=""
+                onChange={handleSelectDateType}
+                value={sortByDate}
+              >
+                <option value="default">Default</option>
+                <option value="Ascending">Ascending</option>
+                <option value="Descending">Descending</option>
               </select>
             </div>
           </div>

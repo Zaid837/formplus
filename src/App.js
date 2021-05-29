@@ -16,6 +16,8 @@ class App extends React.Component {
       currentPage: 1,
       pageSize: 15,
       category: "All",
+      sortType: "Default",
+      sortByDate: "Default",
     };
   }
 
@@ -34,15 +36,30 @@ class App extends React.Component {
 
   selectCategory = (e) => {
     const { value } = e.target;
-    this.setState({ category: value });
+    this.setState({ category: value, sortType: "Default" });
+  };
+
+  selectSortType = (e) => {
+    const { value } = e.target;
+    this.setState({ sortType: value });
+  };
+
+  selectSortDateType = (e) => {
+    const { value } = e.target;
+    this.setState({ sortByDate: value });
   };
   render() {
-    const { templates, currentPage, pageSize, category } = this.state;
+    const { templates, currentPage, pageSize, category, sortType, sortByDate } =
+      this.state;
     return (
       <div className="App">
         <Navbar
           handleSelectedCategory={this.selectCategory}
           category={category}
+          handleSelectOrderType={this.selectSortType}
+          handleSelectDateType={this.selectSortDateType}
+          sortType={sortType}
+          sortByDate={sortByDate}
         />
         <div className="badge-notification">
           <img src={Vector} alt="info" className="info-icon" />
@@ -57,6 +74,8 @@ class App extends React.Component {
           currentPage={currentPage}
           pageSize={pageSize}
           category={category}
+          sortType={sortType}
+          sortByDate={sortByDate}
         />
         {templates.length !== 0 && (
           <Pagination
