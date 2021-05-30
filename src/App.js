@@ -36,7 +36,11 @@ class App extends React.Component {
 
   selectCategory = (e) => {
     const { value } = e.target;
-    this.setState({ category: value, sortType: "Default" });
+    this.setState({
+      category: value,
+      sortType: "Default",
+      sortByDate: "Default",
+    });
   };
 
   selectSortType = (e) => {

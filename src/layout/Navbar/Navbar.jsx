@@ -55,7 +55,7 @@ class Navbar extends Component {
                 onChange={handleSelectDateType}
                 value={sortByDate}
               >
-                <option value="default">Default</option>
+                <option value={sortByDate}>{sortByDate}</option>
                 <option value="Ascending">Ascending</option>
                 <option value="Descending">Descending</option>
               </select>
