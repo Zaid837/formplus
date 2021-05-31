@@ -20,3 +20,10 @@
 .info-icon {
   margin-right: 10px;
 }
+
+@media screen and (max-width: 850px) {
+  .badge-notification {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+}

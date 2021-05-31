@@ -9,3 +9,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 1200px) {
+  .template-list {
+    justify-content: space-around;
+  }
+}

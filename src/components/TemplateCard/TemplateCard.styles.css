@@ -31,3 +31,9 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+@media screen and (max-width: 1400px) {
+  .template-card-con {
+    width: 300px;
+  }
+}
