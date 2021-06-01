@@ -18,12 +18,13 @@ class App extends React.Component {
       category: "All",
       sortType: "Default",
       sortByDate: "Default",
+      PaginateArg: ""
     };
   }
 
   async componentDidMount() {
     const res = await axios.get(this.state.url);
-    this.setState({ templates: res.data });
+    this.setState({ templates: res.data,  });
   }
 
   handleNextPage = () => {
@@ -40,20 +41,22 @@ class App extends React.Component {
       category: value,
       sortType: "Default",
       sortByDate: "Default",
+      PaginateArg: "filteredByCategory"
     });
   };
 
   selectSortType = (e) => {
     const { value } = e.target;
-    this.setState({ sortType: value });
+    this.setState({ sortType: value , PaginateArg: "sortedByOrder" });
+
   };
 
   selectSortDateType = (e) => {
     const { value } = e.target;
-    this.setState({ sortByDate: value });
+    this.setState({ sortByDate: value,  PaginateArg: "sortedByDate" });
   };
   render() {
-    const { templates, currentPage, pageSize, category, sortType, sortByDate } =
+    const { templates, currentPage, pageSize, category, sortType, sortByDate, PaginateArg } =
       this.state;
     return (
       <div className="App">
@@ -80,6 +83,8 @@ class App extends React.Component {
           category={category}
           sortType={sortType}
           sortByDate={sortByDate}
+          PaginateArg={PaginateArg}
+          
         />
         {templates.length !== 0 && (
           <Pagination
