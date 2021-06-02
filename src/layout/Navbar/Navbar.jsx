@@ -9,6 +9,7 @@ class Navbar extends Component {
       handleSelectOrderType,
       sortType,
       handleSelectDateType,
+      handleSearch,
       sortByDate,
     } = this.props;
     return (
@@ -19,6 +20,7 @@ class Navbar extends Component {
             name="search"
             id="search"
             placeholder="Search Templates"
+            onChange={(e) => handleSearch(e)}
           />
           <img src={SearchIcon} alt="search-icon" className="search-icon" />
         </div>

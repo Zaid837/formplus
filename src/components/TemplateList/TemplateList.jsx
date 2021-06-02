@@ -29,7 +29,7 @@ class TemplateList extends Component {
     );
     // call paginate function from utils and pass to map function call
     const pagedTemplates = paginate(data, currentPage, pageSize);
-    console.log(pagedTemplates);
+    // console.log(pagedTemplates);
 
     return (
       <React.Fragment>

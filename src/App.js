@@ -18,7 +18,8 @@ class App extends React.Component {
       category: "All",
       sortType: "Default",
       sortByDate: "Default",
-      PaginateArg: ""
+      PaginateArg: "",
+      searchField: ""
     };
   }
 
@@ -35,6 +36,11 @@ class App extends React.Component {
     this.setState({ currentPage: this.state.currentPage - 1 });
   };
 
+  handleSearch = (e) => {
+    const {value} = e.target;
+    console.log(value)
+    this.setState({searchField : value})
+  }
   selectCategory = (e) => {
     const { value } = e.target;
     this.setState({
@@ -56,8 +62,9 @@ class App extends React.Component {
     this.setState({ sortByDate: value,  PaginateArg: "sortedByDate" });
   };
   render() {
-    const { templates, currentPage, pageSize, category, sortType, sortByDate, PaginateArg } =
+    const { templates, currentPage, pageSize, category, sortType, sortByDate, PaginateArg, searchField } =
       this.state;
+      const filteredTemplates = templates.filter(template => template.name.toLowerCase().includes(searchField.toLowerCase()))
     return (
       <div className="App">
         <Navbar
@@ -65,6 +72,7 @@ class App extends React.Component {
           category={category}
           handleSelectOrderType={this.selectSortType}
           handleSelectDateType={this.selectSortDateType}
+          handleSearch={this.handleSearch}
           sortType={sortType}
           sortByDate={sortByDate}
         />
@@ -77,7 +85,7 @@ class App extends React.Component {
         </div>
 
         <TemplateList
-          templates={templates}
+          templates={filteredTemplates}
           currentPage={currentPage}
           pageSize={pageSize}
           category={category}
