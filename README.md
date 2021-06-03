@@ -8,6 +8,7 @@
 - Sort templates by order (Ascending, Descending)
 - Sort templates by date
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/18ca368825d34e878cb72092b4d4ef8e)](https://app.codacy.com/gh/Zaid837/formplus?utm_source=github.com&utm_medium=referral&utm_content=Zaid837/formplus&utm_campaign=Badge_Grade_Settings)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7ea9f71f88e49069798c777410a4181)](https://www.codacy.com/gh/Zaid837/formplus/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Zaid837/formplus&amp;utm_campaign=Badge_Grade)
 
 This is a [link](https://formplus-live.herokuapp.com/) to the live website hosted with heroku
