@@ -24,7 +24,6 @@ export function getPaginatedData(array, argument, sortType, sortByDate){
               });
               default:
                   return array
-
-
     }
 }
+

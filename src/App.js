@@ -1,11 +1,13 @@
 import React from "react";
 import axios from "axios";
+
+
 import "./App.css";
 import Navbar from "./layout/Navbar/Navbar";
 import TemplateList from "./components/TemplateList/TemplateList";
+import Pagination from "./layout/Pagination/pagination";
 
 import Vector from "./assets/Group.png";
-import Pagination from "./layout/Pagination/pagination";
 
 class App extends React.Component {
   constructor() {
